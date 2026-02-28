@@ -111,7 +111,7 @@ pub struct Context {
 }
 
 impl Context {
-    pub fn send_progress(&self, progress: Progress) -> async_channel::Send<u8> {
+    pub fn send_progress(&self, progress: Progress) -> async_channel::Send<'_, u8> {
         self.progress_tx.send(progress)
     }
 }
